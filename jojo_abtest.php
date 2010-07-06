@@ -25,6 +25,7 @@ class Jojo_Plugin_jojo_abtest extends Jojo_Plugin
     /* returns a variation number to use for testing */
     static function getVariation($num_variations)
     {
+        if (empty($num_variations)) $num_variations = 1;
         $ab_number = self::getAbNumber();
         return ($ab_number % $num_variations);
     }
